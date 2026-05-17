@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   const apiTarget = env.VITE_API_TARGET || 'http://localhost:8000'
 
   return {
+    base: '/kosten-rechner/',
     plugins: [react()],
     server: {
       host: '0.0.0.0',
