@@ -1,5 +1,5 @@
-const CACHE = 'kosten-v1'
-const SHELL = ['/index.html', '/']
+const CACHE = 'kosten-v2'
+const SHELL = ['/kosten-rechner/', '/kosten-rechner/index.html']
 
 self.addEventListener('install', e => {
   self.skipWaiting()
@@ -19,14 +19,14 @@ self.addEventListener('fetch', e => {
   const { request } = e
   const url = new URL(request.url)
 
-  if (url.pathname.startsWith('/api/ausgaben') || url.pathname.startsWith('/api/auth')) {
+  if (url.pathname.startsWith('/api/') || url.pathname.startsWith('/auth/')) {
     e.respondWith(fetch(request))
     return
   }
 
   if (request.mode === 'navigate') {
     e.respondWith(
-      caches.match('/index.html').then(r => r || fetch(request))
+      caches.match('/kosten-rechner/index.html').then(r => r || fetch(request))
     )
     return
   }
