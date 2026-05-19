@@ -10,6 +10,8 @@ async function request(path, body) {
     const err = await res.json().catch(() => ({}))
     throw new Error(err.detail || `HTTP ${res.status}`)
   }
+  text = await res.text();
+  console.log(text)
   return res.json()
 }
 
