@@ -23,6 +23,8 @@ export default function Login() {
       const res = mode === 'login'
         ? await login(form.email, form.password)
         : await register(form.name, form.email, form.password)
+      console.log(res);
+      
       authLogin(res.user, res.token)
       navigate('/')
     } catch (err) {

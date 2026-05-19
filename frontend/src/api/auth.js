@@ -4,6 +4,8 @@ async function request(path, body) {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body),
   })
+  console.log(res);
+  
   if (!res.ok) {
     const err = await res.json().catch(() => ({}))
     throw new Error(err.detail || `HTTP ${res.status}`)
