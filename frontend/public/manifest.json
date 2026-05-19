@@ -2,7 +2,7 @@
   "name": "Kosten Rechner",
   "short_name": "Kosten",
   "description": "Persönliche Ausgaben verwalten",
-  "start_url": "/kosten-rechner",
+  "start_url": "/kosten-rechner/",
   "display": "standalone",
   "background_color": "#f5f5f5",
   "theme_color": "#2563eb",
