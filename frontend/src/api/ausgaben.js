@@ -3,7 +3,7 @@ function token() {
 }
 
 async function request(path, options = {}) {
-  const res = await fetch('/ausgaben' + path, {
+  const res = await fetch('/api/ausgaben' + path, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${token()}`,

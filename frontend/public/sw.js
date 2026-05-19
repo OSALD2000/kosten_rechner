@@ -19,10 +19,7 @@ self.addEventListener('fetch', e => {
   const { request } = e
   const url = new URL(request.url)
 
-  if (url.pathname.startsWith('/ausgaben') || url.pathname.startsWith('/auth')) {
-    request.url = "/api/"+request.url
-    console.log(url);
-    
+  if (url.pathname.startsWith('/api/ausgaben') || url.pathname.startsWith('/api/auth')) {
     e.respondWith(fetch(request))
     return
   }
