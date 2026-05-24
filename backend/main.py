@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from backend.routes.ausgaben import router as ausgaben_router
 from backend.routes.auth import router as auth_router
 
-app = FastAPI(title="Kosten Rechner API")
+app = FastAPI(title="Kosten Rechner API", root_path="/api", docs_url="/docs", openapi_url="/openapi.json")
 
 app.add_middleware(
     CORSMiddleware,
